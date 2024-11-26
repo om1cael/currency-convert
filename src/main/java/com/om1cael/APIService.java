@@ -22,7 +22,7 @@ public class APIService {
     private String conversionCurrency;
 
     public APIService(String baseCurrency, String conversionCurrency) {
-        if(apiKey.isEmpty() || apiKey.isBlank())
+        if(apiKey == null || apiKey.isEmpty() || apiKey.isBlank())
             throw new IllegalStateException("API key not set!");
 
         this.apiEndpoint = URI.create("https://v6.exchangerate-api.com/v6/" + apiKey + "/latest/" + baseCurrency);
